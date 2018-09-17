@@ -1,0 +1,85 @@
+create table videos(
+	
+	videoId int auto_increment primary key not null,
+    
+	title varchar(50),
+    
+	type varchar(50),
+    
+	qty int,
+    
+	director varchar(50),
+    
+	producer varchar(50),
+    
+	actor1 varchar(50),
+    
+	actor2 varchar(50),
+    
+	pricePer7d double,
+    
+	addPricePerD double,
+    
+	artUrl varchar(250),
+    
+	description varchar(1500),
+    
+	price double
+	
+	);
+
+create table members(
+	
+	memberId int auto_increment primary key not null,
+    
+	fname varchar(30),
+    
+	lname varchar(50),
+    
+	address varchar(200),
+    
+	phone varchar(20),
+    
+	type int,
+    
+	pwd varchar(65)
+
+	);
+
+create table orders(
+	
+	orderId int auto_increment primary key not null,
+	
+	memberId int,
+    
+	qty int,
+    
+	videoId int,
+    
+	title varchar(100),
+    
+	orderedDate varchar(20),
+    
+	dueDate varchar(20),
+    
+	amount double,
+    
+	returned varchar(10)
+	
+	);
+
+create table sell(
+	
+	orderId int auto_increment primary key not null,
+    
+	videoId int,
+    
+	qty int,
+    
+	price double
+
+	);
+
+--Admin Creation
+insert into members (fname, lname, address, phone, type, pwd) 
+values ('John', 'Smith', 'No. 25, RiverSide, CA', '05245685465', 0, '123');

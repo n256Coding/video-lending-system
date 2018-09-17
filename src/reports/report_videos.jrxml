@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_videos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="77a2cde3-bcf1-4281-ab0a-34ff5d81c404">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     videos.`videoId` AS videos_videoId,
+     videos.`title` AS videos_title,
+     videos.`type` AS videos_type,
+     videos.`qty` AS videos_qty,
+     videos.`director` AS videos_director,
+     videos.`producer` AS videos_producer,
+     videos.`actor1` AS videos_actor1,
+     videos.`actor2` AS videos_actor2,
+     videos.`pricePer7d` AS videos_pricePer7d,
+     videos.`addPricePerD` AS videos_addPricePerD,
+     videos.`artUrl` AS videos_artUrl
+FROM
+     `videos` videos]]>
+	</queryString>
+	<field name="videos_videoId" class="java.lang.Integer"/>
+	<field name="videos_title" class="java.lang.String"/>
+	<field name="videos_type" class="java.lang.String"/>
+	<field name="videos_qty" class="java.lang.Integer"/>
+	<field name="videos_director" class="java.lang.String"/>
+	<field name="videos_producer" class="java.lang.String"/>
+	<field name="videos_actor1" class="java.lang.String"/>
+	<field name="videos_actor2" class="java.lang.String"/>
+	<field name="videos_pricePer7d" class="java.lang.Double"/>
+	<field name="videos_addPricePerD" class="java.lang.Double"/>
+	<field name="videos_artUrl" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="2d438d59-a5a4-4db1-8223-01904dcfc008"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="289" height="33" uuid="7bd8f2b6-1c2d-4f72-8479-df3f9491f271"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Video Lending System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="b21cbc7d-a61a-4c32-a8ac-6f59d7fbc6fc"/>
+				<text><![CDATA[Movies report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="7e44fdb8-c9c8-4ac5-a465-88ae7e83da5e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="50" height="15" uuid="a2e19554-427c-4702-ae42-d8580fabdaf1"/>
+				<text><![CDATA[videoId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="50" y="19" width="50" height="15" uuid="1bef6491-7395-473c-bc50-df0ccdc0a046"/>
+				<text><![CDATA[title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="100" y="19" width="50" height="15" uuid="fda74f22-7a5b-49a6-9c0e-515eb47ba4a5"/>
+				<text><![CDATA[type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="150" y="19" width="50" height="15" uuid="e9ceeb47-d97d-4aac-acd7-a026aecf6c8f"/>
+				<text><![CDATA[qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="200" y="19" width="50" height="15" uuid="242cd934-424a-4432-b120-3125f55fceb8"/>
+				<text><![CDATA[director]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="250" y="19" width="50" height="15" uuid="57f88935-f530-4e63-94ed-693867556dc6"/>
+				<text><![CDATA[producer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="300" y="19" width="50" height="15" uuid="7f9544f6-fa1c-48fe-b0d5-a2dc1bc2f462"/>
+				<text><![CDATA[actor1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="350" y="19" width="50" height="15" uuid="bc257818-6aff-4791-8ada-2e91c18a7142"/>
+				<text><![CDATA[actor2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="19" width="50" height="15" uuid="91869d01-1377-4af0-9db3-f12c31e5ee1a"/>
+				<text><![CDATA[pricePer7d]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="450" y="19" width="50" height="15" uuid="f6feaf8e-3be0-44da-bc9a-0996d1f1ba3f"/>
+				<text><![CDATA[addPricePerD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="500" y="19" width="50" height="15" uuid="b15c6096-d4b5-4fb4-958a-3d4c228185e8"/>
+				<text><![CDATA[artUrl]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="9cdd2d81-b823-4fe6-986f-7aafc752ef13"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="50" height="15" uuid="92dbada4-8464-43a7-8e99-a5d641c31ddc"/>
+				<textFieldExpression><![CDATA[$F{videos_videoId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="50" y="0" width="50" height="15" uuid="c83de287-310e-46e0-836a-6dd3f0decb8b"/>
+				<textFieldExpression><![CDATA[$F{videos_title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="100" y="0" width="50" height="15" uuid="23cd0a08-7fb8-4e7c-a21a-ad57dc49c2ac"/>
+				<textFieldExpression><![CDATA[$F{videos_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="150" y="0" width="50" height="15" uuid="a9b374f0-bbcc-4187-8df2-04ae04a718e5"/>
+				<textFieldExpression><![CDATA[$F{videos_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="200" y="0" width="50" height="15" uuid="4268a363-0ac1-4e2c-ab34-afbb86d73a86"/>
+				<textFieldExpression><![CDATA[$F{videos_director}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="250" y="0" width="50" height="15" uuid="6cfc4f32-cfdc-432a-824d-7b0e87784a03"/>
+				<textFieldExpression><![CDATA[$F{videos_producer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="300" y="0" width="50" height="15" uuid="98e4e7ca-7c35-44cd-a5f0-298824916431"/>
+				<textFieldExpression><![CDATA[$F{videos_actor1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="350" y="0" width="50" height="15" uuid="12acc04c-5dfd-455e-94c2-10222f6fa267"/>
+				<textFieldExpression><![CDATA[$F{videos_actor2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="400" y="0" width="50" height="15" uuid="081afd31-38e0-4e1b-ab02-37fabf0d3eb1"/>
+				<textFieldExpression><![CDATA[$F{videos_pricePer7d}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="450" y="0" width="50" height="15" uuid="cd7e13c4-fa66-4706-9eb2-811c0cfb4d32"/>
+				<textFieldExpression><![CDATA[$F{videos_addPricePerD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="500" y="0" width="50" height="15" uuid="8d070128-8182-43e1-b7da-111a9d4ca2a3"/>
+				<textFieldExpression><![CDATA[$F{videos_artUrl}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="0e80e7d4-9e5c-4336-a101-a807430c0e07"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="4c66c5ef-3e98-4cd2-b837-846d62746bed"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="f7256147-a9bb-41fb-a13d-7fa0c06d162e"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="f340801b-58c5-445e-ae35-bd8e219ecb2d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
